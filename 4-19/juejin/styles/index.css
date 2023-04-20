@@ -1,6 +1,6 @@
 body {
 	margin: 0;
-	background-color: lightgrey;
+	background-color: whitesmoke;
 	font-size: 10px;
 }	
 img{
@@ -15,29 +15,31 @@ a{
 	width:100%;
 }
 .wrapper header{
-
+	font-size: 10px;
 	background-color: white;
 }
 .wrapper header .header-content{
+	padding: .5% 5% 0 5%;
 	display: flex;
-	justify-content: space-around;
+	
+	justify-content: space-between;
 }
 .wrapper header .header-content .left{
-	width: 100%;
+	width: 40%;
 	height:1%;
 	background-color: white;
 	display: flex;
 	align-content: center;
-	justify-content: space-around;
+	justify-content: space-between;
 }
 .wrapper header .header-content .right{
-	width: 100%;
-	height:5%;
-	padding-top: 2%;
+	width: 50%;
+	height:1%;
 	background-color: white;
 	display: flex;
-	align-content: center;
+	padding: .5%;
 	justify-content: space-around;
+	
 }
 .wrapper header .header-box img{
 	height: 50%;
@@ -46,16 +48,19 @@ a{
 	display: flex;
 	align-items: center;
 }
-
+nav{
+	width: 100%;
+}
 nav ul {
 	padding: 0;
 	display: flex;
+	justify-content: space-between;
 }
 
 nav ul li {
 	display: flex;
 	justify-content: space-between;
-	padding: 10px ;
+
 }
 
 nav ul a {
@@ -79,43 +84,34 @@ nav ul a div {
 }
 
 header .search-bar {
-	height: 100%;
+	height: 40%;
 	display: flex;
+	align-items: center;
 }
 header .search-bar .search-column{
-	position: relative;
-	height: 90%;
-	padding-right: 0;
-	margin-right: 0;
+	
+
 	cursor: pointer;
 }
 header .search-bar .search-button{
 	position: relative;
-	height: 110%;
 	padding-left: 0;
-
 	cursor: pointer;
 }
 header .center{
-	height: 60%;
-	margin-left: 10px;
-	text-align: center;
+	
 	background-color: dodgerblue;
 	color:white;
 	cursor: pointer;
 }
 header .logo{
-	font-size: 14px;
-	padding:0 3px 0 3px;
 	cursor: pointer;
+	font-size: 140%;
 }
 header .login-register-box{
 	color: blue;
-	height: 7%;
-	width: 15%;
-	text-align: center;
+font-size: 130%;
 	border: solid .1px blue;
-	font-size: 14px;
 	cursor: pointer;
 }
 
