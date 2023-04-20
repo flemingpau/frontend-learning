@@ -1,0 +1,165 @@
+body {
+	margin: 0;
+	background-color: lightgrey;
+	height: 1000px;
+	weight: 100%;
+}
+ul{
+	list-style: none;
+}
+.wrapper{
+	height: 100%;
+	weight:100%;
+}
+.wrapper header {
+	margin: 0;
+	padding: 0 50px;
+	width: 100%;
+	height: 5vw;
+	background-color: white;
+	display: flex;
+	align-items: center;
+}
+.wrapper header .header-box{
+	display: flex;
+	align-items: center;
+}
+
+nav ul {
+	padding: 0;
+	display: flex;
+}
+
+nav ul li {
+	
+	display: flex;
+	padding: 10px 10px;
+}
+
+nav ul a {
+	display: flex;
+	justify-content: space-around;
+	color: black;
+	text-decoration: none;
+	font-size: 13px;
+	text-align: center;
+	cursor: pointer;
+}
+
+nav ul a div {
+	border-radius: 5px;
+	position: absolute;
+	font-size: 7px;
+	justify-content: space-around;
+	background-color: red;
+	color: white;
+	text-decoration: none;
+	margin: -10px 0 auto 30px;
+}
+
+header .search-bar {
+	margin-left: 50px;
+	height: 60%;
+	display: flex;
+}
+header .search-bar .search-column{
+	position: relative;
+	font-size: 13px;
+	height: 90%;
+	padding-right: 0;
+	margin-right: 0;
+	cursor: pointer;
+}
+header .search-bar .search-button{
+	position: relative;
+	font-size: 13px;
+	height: 110%;
+	padding-left: 0;
+	margin: 0 0 0 0;
+	cursor: pointer;
+}
+header .center{
+	height: 60%;
+	margin-left: 10px;
+	text-align: center;
+	background-color: dodgerblue;
+	color:white;
+	cursor: pointer;
+}
+header .logo{
+	font-size: 14px;
+	padding:0 3px 0 3px;
+	cursor: pointer;
+}
+header .login-register-box{
+	color: blue;
+	border: solid 1px blue;
+	font-size: 14px;
+	cursor: pointer;
+}
+.main{
+	height: 100%;
+	display: flex;
+	//background-color: plum;
+}
+.main .leftside{
+	width: 15%;
+	margin: 1% 1% 0 9%;
+	background-color: white;
+}
+.main .leftside li{
+	list-style: none;
+	margin: 0 0 13px 0;
+	
+}
+.main .leftside li a{
+	text-decoration: none;
+	color: gray;
+	cursor: pointer;
+}
+.main .middle{
+	width:50%;
+	//background-color: yellow;
+}
+.main .middle .upper{
+	margin: 0;
+	height:20%;
+	background-color: white;
+	
+}
+.main .middle .upper>ul{
+	height: 100%;
+	display:flex;
+	list-style: none;
+	//background-color: orange;
+}
+.main .middle .upper>ul>li{
+	width: 30%;
+	background-color: green;
+}
+.main .middle .upper .ranking-list ul{
+	width: 30%;
+	align-items: center;
+	background-color: orange;
+}
+.main .middle .upper .list-name{
+	
+	align-items: center;
+	background-color: orange;
+}
+.main .middle .upper .more{
+	position: absolute;
+	margin: -20px 0 0 90px;
+	font-size: 80%;
+	color: darkgrey;
+}
+.main .middle .down{
+	padding: 10%;
+	height:70%;
+	background-color: yellow;
+}
+.main .rightside{
+	width: 15%;
+	margin: 0 10% 0 0;
+	background-color: navajowhite;
+}
