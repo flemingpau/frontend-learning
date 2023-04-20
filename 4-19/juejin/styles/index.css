@@ -1,24 +1,31 @@
 body {
 	margin: 0;
 	background-color: lightgrey;
-	height: 1000px;
-	weight: 100%;
+	height: 100%;
+	width: 100%;
+	font-size: 10px;
+}	
+img{
+	width: 30%;
 }
-ul{
-	list-style: none;
+a{
+	text-decoration: none;
+	color: black;
 }
 .wrapper{
 	height: 100%;
-	weight:100%;
+	width:100%;
 }
 .wrapper header {
-	margin: 0;
-	padding: 0 50px;
 	width: 100%;
-	height: 5vw;
+	height:4%;
 	background-color: white;
 	display: flex;
 	align-items: center;
+	justify-content: space-around;
+}
+.wrapper header .header-box img{
+	height: 10%;
 }
 .wrapper header .header-box{
 	display: flex;
@@ -31,9 +38,9 @@ nav ul {
 }
 
 nav ul li {
-	
 	display: flex;
-	padding: 10px 10px;
+	justify-content: space-between;
+	padding: 10px ;
 }
 
 nav ul a {
@@ -41,30 +48,28 @@ nav ul a {
 	justify-content: space-around;
 	color: black;
 	text-decoration: none;
-	font-size: 13px;
 	text-align: center;
 	cursor: pointer;
 }
 
 nav ul a div {
-	border-radius: 5px;
+	border-radius: 40%;
 	position: absolute;
-	font-size: 7px;
+	font-size: 60%;
 	justify-content: space-around;
 	background-color: red;
 	color: white;
 	text-decoration: none;
-	margin: -10px 0 auto 30px;
+	margin: -0.7% 0 auto 3%;
 }
 
 header .search-bar {
-	margin-left: 50px;
+	margin-left: 5%;
 	height: 60%;
 	display: flex;
 }
 header .search-bar .search-column{
 	position: relative;
-	font-size: 13px;
 	height: 90%;
 	padding-right: 0;
 	margin-right: 0;
@@ -72,7 +77,6 @@ header .search-bar .search-column{
 }
 header .search-bar .search-button{
 	position: relative;
-	font-size: 13px;
 	height: 110%;
 	padding-left: 0;
 	margin: 0 0 0 0;
@@ -97,20 +101,21 @@ header .login-register-box{
 	font-size: 14px;
 	cursor: pointer;
 }
+
 .main{
 	height: 100%;
 	display: flex;
 	//background-color: plum;
 }
+
 .main .leftside{
 	width: 15%;
-	margin: 1% 1% 0 9%;
+	margin: 1% 3% 0 6%;
 	background-color: white;
 }
 .main .leftside li{
 	list-style: none;
 	margin: 0 0 13px 0;
-	
 }
 .main .leftside li a{
 	text-decoration: none;
@@ -119,47 +124,131 @@ header .login-register-box{
 }
 .main .middle{
 	width:50%;
+	
 	//background-color: yellow;
 }
+
 .main .middle .upper{
-	margin: 0;
-	height:20%;
-	background-color: white;
-	
+	height:auto;
+	background-color: white;	
 }
+
 .main .middle .upper>ul{
+	padding:0 0;
 	height: 100%;
+	
 	display:flex;
 	list-style: none;
 	//background-color: orange;
 }
 .main .middle .upper>ul>li{
-	width: 30%;
-	background-color: green;
+	width: 100%;
+	//background-color: green;
 }
 .main .middle .upper .ranking-list ul{
 	width: 30%;
 	align-items: center;
-	background-color: orange;
+	//background-color: orange;
 }
 .main .middle .upper .list-name{
-	
-	align-items: center;
-	background-color: orange;
+	text-align: center;
+	//background-color: orange;
 }
 .main .middle .upper .more{
 	position: absolute;
-	margin: -20px 0 0 90px;
+	margin: -1% 0 0 13%;
 	font-size: 80%;
 	color: darkgrey;
 }
+
+.main .middle .upper ol, .main .middle .upper ul ul{
+	padding-left: 7%;
+}
+.empty{
+	height:2%;
+}
 .main .middle .down{
-	padding: 10%;
-	height:70%;
-	background-color: yellow;
+
+	height: auto;
+	background-color: WHITE;
+}
+.main .middle .down .column a{
+	padding:3% 0 0 3%;
+	cursor: pointer;
+}
+.main .middle .down ul{
+	list-style: none;
+	padding-left: 3%;
+}
+.main .middle .down ul li{
+	border-bottom: solid 1px grey;
+	padding-bottom: 1%;
+}
+.main .middle .down .content{
+	display: flex;
+}
+.main .middle .down ul .title{
+	font-size: 140%;
+	color: gray;
+}
+.main .middle .down ul .description{
+	font-size: 130%;
+	color: darkgray;
+}
+.main .middle .down ul .content img{
+	width: 10%;
 }
 .main .rightside{
 	width: 15%;
-	margin: 0 10% 0 0;
-	background-color: navajowhite;
+	margin: 1% 6% 0 3%;
+	
+}
+.main .rightside ul{
+	margin-top: 0;
+	list-style: none;
+	padding-left: 0;
+}
+.main .rightside li{
+	padding-bottom: 5%;
+	
+}
+.main .rightside .greet{
+	display: flex;
+	justify-content: space-between;
+	padding: 5% 3% 5% 3%;
+	background-color: white;
+}
+.greet .greet-title{
+	font-size: 150%;
+}
+.greet .greet-text{
+	font-size: 70%;
+}
+.main .rightside li img{
+	width: 100%;
+	cursor: pointer;
+}
+.main .rightside .qr{
+	display: flex;
+	justify-content: space-between;
+	padding: 5% 3% 5% 3%;
+	background-color: white;
+}
+.main .rightside .qrbox{
+	padding-right: 5%;
+}
+.main .rightside .qr img{	
+	width: 30%;
+}
+.qr .greet-title{
+	font-size: 150%;
+}
+.qr .greet-text{
+	font-size: 70%;
+}
+.other{
+	background-color: white;
+}
+.main .rightside .other img{
+	width:10%
 }
