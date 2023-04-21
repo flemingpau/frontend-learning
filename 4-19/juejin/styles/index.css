@@ -118,7 +118,7 @@ font-size: 130%;
 }
 
 .main{
-	padding-top: 3%;
+	padding-top:4.5%;
 	height: 100%;
 	display: flex;
 	//background-color: plum;
@@ -127,11 +127,11 @@ font-size: 130%;
 .main .leftside{
 	width: 11%;
 	height: 100%;
-	margin: 1% 2% 0 10.5%;
+	margin: 0 2% 0 10.5%;
 	
 }
 .main .leftside ul{
-	margin:3% 0;
+	margin: 0;
 	padding: 3% 4%;
 	background-color: white;
 }
@@ -147,22 +147,18 @@ font-size: 130%;
 }
 .main .middle{
 	width:46.8%;
-	
-	//background-color: yellow;
 }
 
 .main .middle .upper{
-	height:auto;
 	background-color: white;	
 }
 
 .main .middle .upper>ul{
-	padding:0 0;
+	padding:0;
 	height: 100%;
-	
+	margin: 0;
 	display:flex;
 	list-style: none;
-	//background-color: orange;
 }
 .main .middle .upper>ul>li{
 	width: 100%;
@@ -202,6 +198,7 @@ font-size: 130%;
 }
 .main .middle .down .column a{
 	padding:3% 0 0 3%;
+	margin: 0;
 	cursor: pointer;
 }
 .main .middle .down ul{
@@ -228,7 +225,7 @@ font-size: 130%;
 }
 .main .rightside{
 	width: 17%;
-	margin: 1% 6% 0 1.2%;
+	margin: 0 6% 0 1.2%;
 	
 }
 .main .rightside ul{
