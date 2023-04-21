@@ -17,6 +17,8 @@ a{
 .wrapper header{
 	font-size: 10px;
 	background-color: white;
+	position: fixed;
+	width: 100%;
 }
 .wrapper header .header-content{
 	padding: .5% 5% 0 5%;
@@ -116,6 +118,7 @@ font-size: 130%;
 }
 
 .main{
+	padding-top: 3%;
 	height: 100%;
 	display: flex;
 	//background-color: plum;
@@ -168,6 +171,11 @@ font-size: 130%;
 .main .middle .upper .ranking-list ul{
 	width: 30%;
 	align-items: center;
+	//background-color: orange;
+}
+.main .middle .upper .middle-ranking-list{
+	border-right: darkgray solid 1px;
+	border-: darkgray solid 1px;
 	//background-color: orange;
 }
 .main .middle .upper .list-name{
@@ -272,3 +280,6 @@ font-size: 130%;
 .main .rightside .other img{
 	width:10%
 }
+
+
+
