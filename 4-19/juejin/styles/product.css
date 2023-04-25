@@ -55,29 +55,135 @@ nav a{
 }
 main{
 	display: flex;
-	width: 100%;
-	padding: 10px 100px;
-}/*
+	width: 80%;
+	padding: 0 5%;
+}
 article{
 	background-color: white;
-	width:60%;
+	width:100%;
 	height: 100%;
+	
 }
 .product-info-up{
 	display: flex;
+	justify-content: space-around;
+}
+.product-info-left{
+	width: 50%;
+}
+.price{
+	color: orange;
+}
+.thumb-bar{
+	display: flex;
+}
+.triangle{
+	width:0;
+	height:0;
+	border-left: 5px solid transparent;  
+	border-right: 5px solid transparent;  
+	border-bottom: 5px solid red; 
+	position: absolute;
+	left: -100px;
+}
+.thumb-bar img {
+  display: block;
+  width: 10%;
+  float: left;
+  margin: 8px 5px;
 }
 .product-info-right .product-price{
-	color: orange;
+	//color: orange;
 	font-size: 23px;
 }
 .product-info-right .product-summary{
 	background-color: whitesmoke;
 	padding: auto;
 }
+.operation-box{
+	display: flex;
+}
+.pay-box{
+	background-color: orange;
+	color: white;
+	border: solid 1px black;
+	margin: 10px;
+	padding: 3px 13px;
+	cursor: pointer;
+	font-size: 13px;
+}
+.share-box{
+	background-color: whitesmoke;
+	margin: 15px 0 10px;
+
+	cursor: pointer;
+	font-size: 10px;
+}
+.pay ul{
+	padding: 0;
+}
+.product-info-down{
+	padding: 6%;
+}
+.product-info-down .title{
+	background-color: whitesmoke;
+	font-size: 15px;
+	margin: 5px 5px 5px autp;
+}
 img{
-	width: 330px;
-	height: 330px;
+	width: 100%;
+	height: 100%;
 }
 aside{
-	background-color: beige;
-}*/
+	margin: 3% auto auto 3%;
+	width: 20%;
+	//background-color: beige;
+}
+aside .shop-card{
+	display: flex;
+	margin: 5% 0;
+}
+aside .shop-card img{
+	width: 50%;
+	height: 20%;
+}
+aside .shop-card p{
+	margin: 3px;
+	padding: 4px;
+	font-size: 11px;
+}
+aside .shop-card-subscribe{
+	background-color: #5dab13;
+	color: white;
+	margin: 3px;
+	padding: 4px;
+	font-size: 12px;
+}
+aside .hot-product{
+	font-size:12px;
+	 text-align: center;
+}
+.hot-product ul{
+	padding: 3px;
+	text-align: start;
+}
+.hot-product img{
+	height: 70%;
+}
+.wechat{
+	position: fixed;
+	left: 88%;
+	top: 13%;
+	padding: 10px;
+	background-color: white;
+}
+.wechat .title{
+	color: #5dab13;
+	font-size: 13px;
+	padding: 10px;
+	border-bottom: solid 1px black;
+}
+.wechat p{
+	padding-left: 10px;
+}
+
