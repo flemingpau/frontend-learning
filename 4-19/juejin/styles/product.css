@@ -55,7 +55,7 @@ nav a{
 }
 main{
 	display: flex;
-
+	width: 100%;
 	padding: 10px 100px;
 }/*
 article{
