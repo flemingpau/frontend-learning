@@ -1,26 +1,114 @@
-const displayedImg=document.querySelector(".displayed-img");
-const thumbBar=document.querySelector(".thumb-bar")
-const triangle=document.querySelector(".triangle")
-const pic_name=['p1.jpg','p2.jpg','p3.jpg','p4.jpg','p5.jpg', 'p6.jpg']
+// var autoplay = true;
+// var autoplay_Delay = 2000; // ms
+// var autoplayId;
+var intervalId;
 
-for(let i=0;i<pic_name.length;i++){
-	const newTriangle=document.createElement("div");
-	const newImg=document.createElement("img");
-	newImg.setAttribute("src","images/shop/shop_product1/"+pic_name[i]);
-	thumbBar.appendChild(newImg)
-	
-	newImg.addEventListener('mouseover',changePicture);
+var slider;
+var slider_item_container;
+var slider_items;
+var indicator_container;
+
+var slider_item_width;
+var curIndex = 0;
+var triangle;
+
+window.onload = function() {
+    initElement();
+    initEvent();
+
 }
 
-function changePicture(event){
-	displayedImg.src=event.target.src;
-	let j=0;
-	for(let i=0;i<thumbBar.childElementCount;i++){
-		thumbBar.children[i].style.border='none';
-		if(thumbBar.children[i]===event.target)j=i;
-	}
-	event.target.style.border='solid 2px red';
-	triangle.style.left=`${10.8+j*3.8}%`;
+function initElement() {
+    slider = document.getElementById("slider");
+    slider_items = slider.getElementsByTagName("li");
+    slider_item_container = slider.getElementsByClassName("slider-item-container")[0];
+    indicator_container = slider.getElementsByClassName("indicator-container")[0];
+    triangle=document.querySelector(".triangle")
+    
+	var firstItem = slider_items[0].cloneNode(true);
+    slider_item_container.appendChild(firstItem);
+    
+    slider_item_width = slider_items[0].offsetWidth;
 }
 
- 
+function initEvent() {    
+    var indicators = indicator_container.children;
+    for (var i = 0; i < indicators.length; i++) {
+        indicators[i].setAttribute("index", i);
+        indicators[i].addEventListener("mouseover", function () {
+            var index = parseInt(this.getAttribute("index"));
+            next(index);
+        });
+    }
+}
+
+function animate(element, target) {
+    var step = 10;
+    var time = 10;
+    var gap = (Math.abs(target - element.offsetLeft) / slider_item_width);
+    if (gap > 1) {
+        step = step * gap;
+        time = time / gap;
+    }
+    if (element) {
+        step = (element.offsetLeft > target) ? -step : step;
+        clearInterval(intervalId);
+        setCurrentActiveIndicator(curIndex);
+        intervalId = setInterval(function () {
+            if ((step < 0) && (Math.abs(element.offsetLeft + step) < Math.abs(target))) {
+                element.style.left = element.offsetLeft + step + "px";
+            } else {
+                if (Math.abs(target - element.offsetLeft) > Math.abs(step)) {
+                    element.style.left = element.offsetLeft + step + "px";
+                } else {
+                    clearInterval(intervalId);
+                    intervalId = -1;
+                    element.style.left = target + "px";
+                }
+            }
+        }, time);
+    }
+}
+
+function prev() {
+    var element = slider_item_container;
+    var li = element.children;
+    curIndex = curIndex - 1;
+    if (curIndex < 0) {
+        element.style.left = -((li.length-1)*slider_item_width) + "px";
+        curIndex = li.length-2;
+    }
+    animate(element, -(curIndex*slider_item_width));
+}
+
+function next(nextIndex) {
+    var element = slider_item_container;
+    var li = element.children;
+    if ((nextIndex != null) && (typeof(nextIndex) != "undefined")) {
+        curIndex = nextIndex;
+    } else {
+        curIndex = curIndex + 1;
+        if (curIndex > (li.length-1)) {
+            element.style.left = 0 + "px";
+            curIndex = 1;
+        }
+    }
+    animate(element, -(curIndex*slider_item_width));
+}
+
+function setCurrentActiveIndicator(index) {
+    var indicators = indicator_container.children;
+    if (index == indicators.length) {
+        index = 0;
+    }
+    for (var i = 0; i < indicators.length; i++) {
+        if (i == index) {
+            indicators[i].className = "indicator active";
+        } else {
+            indicators[i].className = "indicator";
+        }
+		indicators[i].style.border='none';
+    }
+	indicators[index].style.border='solid 2px red';
+	triangle.style.left=`${27+index*59}px`;
+}
