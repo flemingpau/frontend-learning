@@ -62,13 +62,7 @@ function animate(element, target) {
 
 //设置当前鼠标所在的指示器，并添加三角形以及边框
 function setCurrentActiveIndicator(index) {
-    var indicators = indicator_container.children;
     for (var i = 0; i < indicators.length; i++) {
-        if (i == index) {
-            indicators[i].className = "indicator active";
-        } else {
-            indicators[i].className = "indicator";
-        }//去除红色边框
 		indicators[i].style.border='none';
     }//增加红色边框以及三角形
 	indicators[index].style.border='solid 2px red';
