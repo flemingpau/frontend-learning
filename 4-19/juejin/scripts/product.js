@@ -70,37 +70,17 @@ function animate(element, target) {
     }
 }
 
-function prev() {
-    var element = slider_item_container;
-    var li = element.children;
-    curIndex = curIndex - 1;
-    if (curIndex < 0) {
-        element.style.left = -((li.length-1)*slider_item_width) + "px";
-        curIndex = li.length-2;
-    }
-    animate(element, -(curIndex*slider_item_width));
-}
-
 function next(nextIndex) {
     var element = slider_item_container;
     var li = element.children;
     if ((nextIndex != null) && (typeof(nextIndex) != "undefined")) {
         curIndex = nextIndex;
-    } else {
-        curIndex = curIndex + 1;
-        if (curIndex > (li.length-1)) {
-            element.style.left = 0 + "px";
-            curIndex = 1;
-        }
-    }
-    animate(element, -(curIndex*slider_item_width));
+		animate(element, -(curIndex*slider_item_width));
+	}
 }
 
 function setCurrentActiveIndicator(index) {
     var indicators = indicator_container.children;
-    if (index == indicators.length) {
-        index = 0;
-    }
     for (var i = 0; i < indicators.length; i++) {
         if (i == index) {
             indicators[i].className = "indicator active";
