@@ -4,8 +4,16 @@
   font-size: large;
   padding: 10px;
 }
+a{
+  cursor: pointer;
+}
 ul{
+  padding: 0px;
+  margin : 10px;
   list-style: none;
+}
+li{
+  border-bottom: solid gray 1px;
 }
 main{
   display: flex;

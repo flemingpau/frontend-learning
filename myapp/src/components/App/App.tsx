@@ -13,7 +13,7 @@ class App extends Component {
           <aside className="left">
             <ul>
               <li>
-                <a>开发指南</a>
+                <a href="">介绍</a>
               </li>
               <li>
                 基础组件
@@ -27,6 +27,7 @@ class App extends Component {
           </aside>
           <aside className="middle">
             <Intro />
+            <h1>button</h1>
             <Button>按钮</Button>
             <p>种类</p>
             <Button btnType="default">default</Button>
@@ -37,7 +38,7 @@ class App extends Component {
             <Button size="small">small</Button>
             <Button size="normal">normal</Button>
             <Button size="large">large</Button>
-            <p>禁止</p>
+            <p>特殊</p>
             <Button disabled={true}>disabled</Button>
             <Button type="reset">reset</Button>
           </aside>
