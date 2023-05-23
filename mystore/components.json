@@ -1,0 +1,4 @@
+{
+    "button":"src/component/button/button",
+    "app": "src/component/app/app"
+}
