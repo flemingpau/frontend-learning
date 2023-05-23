@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+      // 指定 ECMAScript 目标版本 "ES3"（默认）， "ES5"， "ES6" / "ES2015"， "ES2016"， "ES2017" 或 "ESNext"。
+      "target": "ES2017",
+      // 构建的目标代码删除所有注释，除了以 /!* 开头的版权信息
+      "declaration": true,
+      // 启用所有严格类型检查选项。启用 --strict 相当于启用 --noImplicitAny, --noImplicitThis, --alwaysStrict， --strictNullChecks, --strictFunctionTypes 和 --strictPropertyInitialization
+      "strict": true,
+      // 禁止对同一个文件的不一致的引用
+      "skipLibCheck": true,
+      //忽略所有的声明文件（ *.d.ts）的类型检查
+      "esModuleInterop": true,
+      "downlevelIteration": true,
+      /* 当target为“ES5”或“ES3”时，为“for-of”、“spread”和“destructuring”中的迭代器提供完全支持 */
+      "resolveJsonModule": true,
+      //是否可以导入 JSON 模块
+      "jsx": "preserve",
+      //是否可以导入 JSON 模块
+      "lib": ["esnext", "dom"],
+      "module": "esnext",
+      "moduleResolution": "node"
+    },  
+    "exclude": ["node_modules", "build", "dist","packages/*/node_modules","packages/cli"]
+  }
+  
