@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "bin": {
-    "fp": "./bin/index.mjs"
+    "fp": "./bin/index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,9 +16,8 @@
     "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
-    "doc": "docz dev",
-    "build:doc": "rimraf doc-site && docz build",
-    "preview:doc": "docz serve"
+    "clean": "rimraf types lib coverage",
+    "build:lib": "rimraf lib && babel src --extensions .ts --out-dir lib --copy-files"
   },
   "keywords": [],
   "author": "",
@@ -42,7 +41,6 @@
     "eslint": "^8.40.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "execa": "^7.1.1",
     "html-webpack-plugin": "^5.5.1",
     "prettier": "^2.8.8",
     "style-loader": "^3.3.2",
@@ -58,9 +56,11 @@
     "@types/estree-jsx": "^1.0.0",
     "classnames": "^2.3.2",
     "commander": "^10.0.1",
+    "execa": "^7.1.1",
     "inquirer": "8.2.5",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "rimraf": "^5.0.1"
   }
 }
