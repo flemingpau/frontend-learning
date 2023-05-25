@@ -2,7 +2,7 @@
 const program = require('commander');
 const pa = require("../package.json");
 const inquirer =require('inquirer');
-async ()=>{await import "execa";};
+import execa from "execa";
 // 定义当前版本
 program.version(`v${pa.version}`);
 
