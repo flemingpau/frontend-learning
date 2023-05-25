@@ -13,11 +13,32 @@ export function nativeTypeValidator(nativeType: string): boolean {
 type ButtonType = "default" | "primary" | "danger" | "link";
 type ButtonSize = "small" | "normal" | "large";
 
-export const props = {
-  type:{
-    type : String,//proptypes.string,
-    validator: typeValidator,
-  },
+// export const props = {
+//   type:{
+//     type : String,//proptypes.string,
+//     validator: typeValidator,
+//   },
+//   nativeType: {
+//     type: String,//proptypes.string,
+//     default:'button',
+//     validator: nativeTypeValidator,
+//   },
+//   size: {
+//     type: String,//proptypes.string,
+//     validator:sizeValidator,
+//   },
+//   color:{
+//     type: String,
+//   },
+//   textColor:{
+//     type: String,
+//   },
+//   children:{
+//     type:String,
+//   }
+// }
+export interface props = {
+  type: string,
   nativeType: {
     type: String,//proptypes.string,
     default:'button',
