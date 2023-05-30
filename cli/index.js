@@ -109,7 +109,7 @@ program
       fs.mkdirSync(path.resolve(root,"example"));
       fs.mkdirSync(path.resolve(root,"__tests__"));
       fs.writeFileSync(path.resolve(root,'./props.ts'), '')
-      fs.writeFileSync(path.resolve(root,"index.ts"),"")
+      fs.writeFileSync(path.resolve(root,"index.tsx"),"")
       fs.writeFileSync(path.resolve(root,`${name}.ts`),"")
       fs.writeFileSync(path.resolve(root,`${name}.css`),"")
       fs.writeFileSync(path.resolve(root,"docs",`${name}.md`),"")
