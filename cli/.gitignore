@@ -1,3 +1,5 @@
 /node_modules
 /a
 /x
+/**/node_modules
+/**/lib
