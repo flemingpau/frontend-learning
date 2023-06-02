@@ -18,104 +18,30 @@ program.version(`varlet-cli ${getCliVersion()}`).usage('<command> [options]')
 //   })
 
   program
-  .command('wdev')
-  .option('-f --force', 'Force dep pre-optimization regardless of whether deps have changed')
-  .option('-d --draft', 'Start the service in draft mode')
-  .description('Run varlet development environment')
+  .command('dev')
+  .description('Run development environment')
   .action(async (options) => {
-    const { dev } = await import('./commands/wdev.js')
-
+    const { dev } = await import('./commands/dev.js')
     return dev(options)
   })
 
 program
-  .command('wbuild')
-  .description('Build varlet site for production')
+  .command('build')
+  .description('Build site for production')
   .action(async () => {
-    const { build } = await import('./commands/wbuild.js')
-
+    const { build } = await import('./commands/build.js')
     return build()
   })
 
   program
     .command('buildComponent')
-    .description('Create a component directory')
+    .description('Build lib for component')
     .option('-n, --name <componentName>', 'Component name')
     .action(async (options) => {
       const { buildComponent } = await import('./commands/buildComponent.js')
       return buildComponent(options)
     })
-// program
-//   .command('dev:vite')
-//   .description('Use vite start server for development')
-//   .action(async () => {
-//     const { vite } = await import('./commands/vite.js')
 
-//     return vite('dev')
-//   })
-
-// program
-//   .command('build:vite')
-//   .description('Use vite build app for production')
-//   .action(async () => {
-//     const { vite } = await import('./commands/vite.js')
-
-//     return vite('build')
-//   })
-
-// program
-//   .command('dev:extension')
-//   .description('Run VSCode extension development environment')
-//   .action(async () => {
-//     const { extension } = await import('./commands/extension.js')
-
-//     return extension('dev')
-//   })
-
-// program
-//   .command('build:extension')
-//   .description('Build VSCode extension for production')
-//   .action(async () => {
-//     const { extension } = await import('./commands/extension.js')
-
-//     return extension('build')
-//   })
-
-// program
-//   .command('build:icons')
-//   .description('Build icons')
-//   .action(async () => {
-//     const { icons } = await import('./commands/icons.js')
-
-//     return icons()
-//   })
-
-// program
-//   .command('preview')
-//   .description('Preview varlet site for production')
-//   .action(async () => {
-//     const { preview } = await import('./commands/preview.js')
-
-//     return preview()
-//   })
-
-// program
-//   .command('compile')
-//   .description('Compile varlet components library code')
-//   .action(async () => {
-//     const { compile } = await import('./commands/compile.js')
-
-//     return compile()
-//   })
-
-// program
-//   .command('lint')
-//   .description('Lint code')
-//   .action(async () => {
-//     const { lint } = await import('./commands/lint.js')
-
-//     return lint()
-//   })
 
 // program
 //   .command('create')
@@ -186,14 +112,6 @@ program
 //     return commitLint(option)
 //   })
 
-// program
-//   .command('checklist <gitParams>')
-//   .description('Display a checklist for confirmation')
-//   .action(async (option) => {
-//     const { checklist } = await import('./commands/checklist.js')
-
-//     return checklist(option)
-//   })
 
 program.on('command:*', async ([cmd]) => {
   const { default: logger } = await import('./shared/logger.js')
@@ -203,9 +121,9 @@ program.on('command:*', async ([cmd]) => {
   process.exitCode = 1
 })
 program
-  .command('createStore')//命令
+  .command('createStore')
   .argument('[name]',"组件库名称")
-  .description('Create a new React component library')
+  .description('Create a new React component store')
   .action(async (name) => {
     const { createStore } = await import('./commands/createStore.js')
     return createStore(name)
@@ -220,6 +138,5 @@ program
     const { generate } = await import('./commands/generate.js')
     return generate(name,options)
   });
-
 
 program.parse()

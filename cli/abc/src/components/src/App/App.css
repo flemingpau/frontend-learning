@@ -1,0 +1,28 @@
+.App-header {
+  background-color: black;
+  color: wheat;
+  font-size: large;
+  padding: 10px;
+}
+
+a{
+  cursor: pointer;
+}
+
+ul{
+  padding: 0;
+  margin : 10px;
+  list-style: none;
+}
+
+li{
+  border-bottom: solid gray 1px;
+}
+
+main{
+  display: flex;
+}
+
+aside{
+  border-left: solid;
+}
