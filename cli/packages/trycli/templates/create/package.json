@@ -30,6 +30,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "html-webpack-plugin": "^5.5.1",
     "prettier": "^2.8.8",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "style-loader": "^3.3.3",
@@ -42,6 +43,9 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "classnames": "^2.3.2"
+    "classnames": "^2.3.2",
+    "execa": "^7.1.1",
+    "nanospinner": "^1.1.0",
+    "path": "^0.12.7"
   }
 }

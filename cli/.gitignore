@@ -3,3 +3,6 @@
 /x
 /**/node_modules
 /**/lib
+/templates
+/ex
+/abc

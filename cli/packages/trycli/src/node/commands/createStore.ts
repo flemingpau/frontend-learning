@@ -9,6 +9,9 @@ import { dirname } from 'path';
 export async function createStore(name: string) {
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = dirname(__filename);
+    const pck = path.resolve(process.cwd(),"package.json")
+    const data=fs.readFileSync(pck,"utf-8")
+    // const myJSON=JSON.parse(data)
     if(!name){//输入名字
         const answers = await inquirer.prompt({
             type: 'input',
@@ -24,6 +27,7 @@ export async function createStore(name: string) {
         name: 'description',
         message: 'Enter a description for the component library:',
     });
+    // myJSON.data.description=description.description;
     //根目录 源文件
     const root = path.join(CWD, name);
     const src = path.join(root, 'src');
@@ -43,7 +47,7 @@ export async function createStore(name: string) {
     fs.mkdirSync(src);
     fs.mkdirSync(dist);
     //将根目录中除node_modules以外的文件都复制一份（待定）
-    const sourceFolder = path.join(__dirname, '../../../templates');
+    const sourceFolder = path.join(__dirname, '../../../templates/create');
     const destinationFolder = root;
     
     cp(sourceFolder, destinationFolder,["node_modules","component_template"]);
