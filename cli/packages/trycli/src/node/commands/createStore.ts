@@ -52,13 +52,6 @@ export async function createStore(name: string) {
     
     cp(sourceFolder, destinationFolder,["node_modules","component_template"]);
     
-    // const copysrc= path.join(__dirname, 'templates');
-    // fs.copySync(path.join(__dirname, 'templates', 'package.json'), path.join(root, 'package.json'));
-    // // fs.copySync(path.join(copysrc, 'templates', 'babel.config.js'), path.join(root, 'babel.config.js'));
-    // fs.copySync(path.join(__dirname, 'templates', 'README.md'), path.join(root, 'README.md'));
-    // fs.copySync(path.join(__dirname, 'templates', 'webpack.config.js'), path.join(root, 'webpack.config.js'));
-    // fs.writeFileSync(path.join(root, 'webpack.config.js'), eval("`" + template+"`"));
-    // // fs.writeFileSync(path.join(__dirname, 'templates', 'package.json',JSON.stringify(`{name: "${name}"}`)));
      //fs.writeFileSync(path.join(root, 'package.json'), JSON.stringify(myJSON));
     console.log(`Creating ${name} - ${description}`);
     console.log("Hint: to start your work:")//项目提示

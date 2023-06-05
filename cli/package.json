@@ -3,10 +3,6 @@
   "private": true,
   "version": "1.0.0",
   "description": "",
-  "bin": {
-    "ccc": "index.js"
-  },
-  "main": "index.js",
   "scripts": {
     "bootstrap": "pnpm install && node bin/bootstrap.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"

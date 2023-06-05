@@ -154,9 +154,9 @@ importers:
       '@babel/preset-typescript':
         specifier: ^7.14.5
         version: 7.21.5(@babel/core@7.21.8)
-      '@varlet/shared':
+      '@webpack/shared':
         specifier: workspace:*
-        version: link:../varlet-shared
+        version: link:../webpack-shared
       babel-jest:
         specifier: ^29.5.0
         version: 29.5.0(@babel/core@7.21.8)
@@ -252,12 +252,6 @@ importers:
         specifier: ^18.7.20
         version: 18.7.20
 
-  packages/varlet-shared:
-    devDependencies:
-      typescript:
-        specifier: ^4.4.4
-        version: 4.4.4
-
   packages/webpack-plugins:
     dependencies:
       classnames:
@@ -351,6 +345,12 @@ importers:
       webpack-merge:
         specifier: ^5.8.0
         version: 5.9.0
+
+  packages/webpack-shared:
+    devDependencies:
+      typescript:
+        specifier: ^4.4.4
+        version: 4.4.4
 
 packages:
 

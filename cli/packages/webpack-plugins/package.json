@@ -2,27 +2,17 @@
   "name": "webpack-plugins",
   "version": "2.11.1",
   "type": "module",
-  "description": "vite plugins of varlet",
+  "description": "webpack plugins of cli",
   "main": "lib/index.js",
   "module": "lib/index.js",
   "keywords": [
-    "vite",
-    "plugins",
-    "varlet"
+    "plugins"
   ],
-  "author": "haoziqaq <357229046@qq.com>",
-  "homepage": "https://github.com/varletjs/varlet#readme",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
   "scripts": {
     "dev": "tsc --watch",
     "build": "tsc"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/varletjs/varlet.git"
-  },
-  "bugs": {
-    "url": "https://github.com/varletjs/varlet/issues"
   },
   "devDependencies": {
     "@babel/core": "^7.21.8",

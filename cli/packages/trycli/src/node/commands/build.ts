@@ -11,6 +11,7 @@ export async function build() {
   ensureDirSync(SRC_DIR);
   const buildConfig = getBuildConfig();
 
+  //调用webpack进行打包
   webpack(buildConfig, (err, stats) => {
     if (err || stats&&stats.hasErrors()) {
       console.error('Build failed.');
