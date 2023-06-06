@@ -1,2 +1,0 @@
-docs下存放的是对组件描述的markdown文件
-types存放接口以及声明
