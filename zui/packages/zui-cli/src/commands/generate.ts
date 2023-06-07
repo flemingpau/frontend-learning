@@ -24,7 +24,7 @@ export async function generate(name: string,options:Options) {
     else root= path.resolve(options.path,name);
     if(!fs.existsSync(root)){
         fs.mkdirSync(root);
-        const sourceFolder = path.join(__dirname, '../../../templates/generate');
+        const sourceFolder = path.join(__dirname, '../../templates/generate');
         const destinationFolder = root;
         cp(sourceFolder, destinationFolder,[]);
         // 指定需要递归修改文件名的目录

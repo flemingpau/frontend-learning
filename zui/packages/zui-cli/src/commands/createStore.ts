@@ -47,7 +47,7 @@ export async function createStore(name: string) {
     fs.mkdirSync(src);
     fs.mkdirSync(dist);
     //将根目录中除node_modules以外的文件都复制一份（待定）
-    const sourceFolder = path.join(__dirname, '../../../templates/create');
+    const sourceFolder = path.join(__dirname, '../../templates/create');
     const destinationFolder = root;
     
     cp(sourceFolder, destinationFolder,["node_modules","component_template"]);

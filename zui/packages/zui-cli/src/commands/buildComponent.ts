@@ -1,7 +1,7 @@
 import webpack from 'webpack';
 import fse from 'fs-extra';
 import { SRC_DIR } from '../shared/constant.js';
-import { getBuildComponentConfig, getBuildConfig } from '../config/webpack.config.js';
+import { getBuildComponentConfig } from '../config/webpack.config.js';
 
 const { ensureDirSync } = fse;
 interface Options{

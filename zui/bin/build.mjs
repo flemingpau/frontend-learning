@@ -4,11 +4,11 @@ import { resolve } from 'path'
 
 const CWD = process.cwd()
 const ZPKG_CLI = resolve(CWD, './packages/zui-cli')
-const PKG_SHARED = resolve(CWD, './packages/zui-shared')
+//const PKG_SHARED = resolve(CWD, './packages/zui-shared')
 
 
 export const buildZCli = () => execa('pnpm', ['build'], { cwd: ZPKG_CLI })
-export const buildShared = () => execa('pnpm', ['build'], { cwd: PKG_SHARED })
+//export const buildShared = () => execa('pnpm', ['build'], { cwd: PKG_SHARED })
 export async function runTask(taskName, task) {
   const s = createSpinner(`Building ${taskName}`).start()
   try {
@@ -21,6 +21,6 @@ export async function runTask(taskName, task) {
 }
 
 export async function runTaskQueue() {
-  await runTask('shared', buildShared)
-  await runTask('zcli', buildZCli)
+//  await runTask('shared', buildShared)
+  await runTask('zui-cli', buildZCli)
 }
