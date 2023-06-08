@@ -27,7 +27,6 @@ export async function generate(name: string,options:Options) {
         const sourceFolder = path.join(__dirname, '../../templates/generate');
         const destinationFolder = root;
         cp(sourceFolder, destinationFolder,[]);
-        // 指定需要递归修改文件名的目录
         renameFilesWithMyComponent(root,name);
     //   fs.mkdirSync(path.resolve(root,"docs"));
     //   fs.mkdirSync(path.resolve(root,"example"));
@@ -55,9 +54,10 @@ export async function generate(name: string,options:Options) {
         if (file.includes('[ComponentName]')) {
           const newFileName = file.replace('[ComponentName]', name);
           const newFilePath = path.join(directory, newFileName);
-  
           fs.renameSync(filePath, newFilePath);
-          console.log(`Renamed file: ${filePath} -> ${newFilePath}`);
+          const data=fs.readFileSync(newFilePath,"utf-8").replaceAll("ComponentName",name)
+          fs.writeFileSync(newFilePath,data)
+          // console.log(`Renamed file: ${filePath} -> ${newFilePath}`);
         }
       }
     });

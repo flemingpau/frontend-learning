@@ -9,9 +9,9 @@ import { dirname } from 'path';
 export async function createStore(name: string) {
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = dirname(__filename);
-    const pck = path.resolve(process.cwd(),"package.json")
+    const pck = path.resolve(__dirname, '../../templates/create/package.json')
     const data=fs.readFileSync(pck,"utf-8")
-    // const myJSON=JSON.parse(data)
+    const myJSON=JSON.parse(data)
     if(!name){//输入名字
         const answers = await inquirer.prompt({
             type: 'input',
@@ -20,14 +20,15 @@ export async function createStore(name: string) {
             default: 'my-components',
         });
         name=answers.name as string;
-        // myJSON.data.name=name;
+        
     }
-    const description = await inquirer.prompt({
+    myJSON.name=name;
+    const ans = await inquirer.prompt({
         type: 'input',
         name: 'description',
         message: 'Enter a description for the component library:',
     });
-    // myJSON.data.description=description.description;
+    myJSON.description=ans.description;
     //根目录 源文件
     const root = path.join(CWD, name);
     const src = path.join(root, 'src');
@@ -52,8 +53,8 @@ export async function createStore(name: string) {
     
     cp(sourceFolder, destinationFolder,["node_modules","component_template"]);
     
-     //fs.writeFileSync(path.join(root, 'package.json'), JSON.stringify(myJSON));
-    console.log(`Creating ${name} - ${description}`);
+     fs.writeFileSync(path.join(root, 'package.json'), JSON.stringify(myJSON,null,"\t"));
+    console.log(`Creating ${name} - ${ans.description}`);
     console.log("Hint: to start your work:")//项目提示
     console.log(`cd ${root}`)
     console.log(`npm install`)

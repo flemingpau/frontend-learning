@@ -1,7 +1,7 @@
 import fs from "fs-extra"
 import path  from "path"
 
-export function cp(src:string, dest:string, arr:Array<string>){
+export function cp(src:string, dest:string, arr:Array<string>, name?:string){
   // Create destination directory if it doesn't exist
   fs.ensureDirSync(dest);
 
@@ -10,6 +10,7 @@ export function cp(src:string, dest:string, arr:Array<string>){
 
   // Iterate through each file/directory
   files.forEach((file: string) => {
+    
     const srcPath = path.join(src, file);
     const destPath = path.join(dest, file);
 
@@ -18,7 +19,7 @@ export function cp(src:string, dest:string, arr:Array<string>){
     arr!=null && arr.forEach((item, index) => {
       
       if (item === file) {
-        console.log(`Skipping 'node_modules' directory: ${srcPath}`);
+        //console.log(`Skipping 'node_modules' directory: ${srcPath}`);
         flag=false;
       }
     })

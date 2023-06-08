@@ -9,9 +9,9 @@ interface Options{
 }
 export async function buildComponent(option:Options) {
     process.env.NODE_ENV = 'production';
-    let arr:Array<String>;
     if(option.name!==undefined){
-        arr=option.name?.split(" ");
+        //解析参数 
+        let arr:Array<String>=option.name?.split(" ");
         ensureDirSync(SRC_DIR);
         const buildConfig = getBuildComponentConfig(arr);
         webpack(buildConfig, (err, stats) => {
