@@ -3,16 +3,17 @@ import fse from 'fs-extra';
 import logger from '../shared/logger.js';
 import webpack from 'webpack';
 import WebpackDevServer, { FSWatcher } from 'webpack-dev-server';
-import { SRC_DIR, VARLET_CONFIG } from '../shared/constant.js';
+import { CWD, SRC_DIR, ZUI_CONFIG } from '../shared/constant.js';
 import { getDevConfig } from '../config/webpack.config.js';
 import { merge } from 'lodash-es';
+import path from 'path';
 
 const { ensureDirSync, pathExistsSync } = fse;
 
 let server:WebpackDevServer;
 let watcher:FSWatcher;
 
-async function startServer(options:DevCommandOptions) {
+async function startServer() {
   const isRestart = Boolean(server);
   logger.info(`${isRestart ? 'Res' : 'S'}tarting server...`);
 
@@ -22,35 +23,34 @@ async function startServer(options:DevCommandOptions) {
 
   // build all config
   const devConfig = getDevConfig();
-  const webpackConfig = merge(devConfig, options.force ? { optimization: { moduleIds: 'named' } } : {});
-
+  let webpackConfig = devConfig;
+  // if (pathExistsSync(ZUI_CONFIG)) {
+  //   const config=(await(import(`${path.resolve(CWD,ZUI_CONFIG)}`)))
+  //   webpackConfig=merge(webpackConfig,config)
+  // }
   // create all instance
   if( webpackConfig.devServer){
     const compiler = webpack(webpackConfig);
     server = new WebpackDevServer(compiler, webpackConfig.devServer);
     await server.start();
   }
-  if (pathExistsSync(VARLET_CONFIG)) {
-    watcher = chokidar.watch(VARLET_CONFIG);
-    watcher.on('change', () => startServer(options));
-  }
+  // if (pathExistsSync(path.resolve(CWD,ZUI_CONFIG))) {
+  //   watcher = chokidar.watch(ZUI_CONFIG);
+  //   watcher.on('change', () => startServer());
+  // }
 
   logger.success(`\n${isRestart ? 'Res' : 'S'}tart successfully!!!`);
 
-  if (options.draft) {
-    logger.title('Server in draft mode!!!');
-  }
 }
 
-interface DevCommandOptions {
-  force?: boolean;
-  draft?: boolean;
-}
+// interface DevCommandOptions {
+//   customize?: boolean;
+// }
 
-export async function dev(options: DevCommandOptions) {
+export async function dev() {
   process.env.NODE_ENV = 'development';
 
   ensureDirSync(SRC_DIR);
 
-  await startServer(options);
+  await startServer();
 }

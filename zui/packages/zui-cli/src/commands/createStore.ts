@@ -32,21 +32,20 @@ export async function createStore(name: string) {
     //根目录 源文件
     const root = path.join(CWD, name);
     const src = path.join(root, 'src');
-    const dist = path.join(root, 'dist');
     // const template = fs.readFileSync(path.join(__dirname, 'templates', 'package.json'), 'utf-8');
     // console.log(fs.stat(root))
     if(fs.existsSync(root)){//目标根目录存在，则判断是否覆盖
         const {force}=await inquirer.prompt({
             type:"confirm",
             name: "force",
-            message:"目录存在，是否覆盖？"
+            message:"目录存在，是否覆盖？",
+            default: false
         })//不覆盖结束
         if(!force)process.exit(1);
         fs.removeSync(root);
     }//删除根目录并创建
     fs.mkdirSync(root);
     fs.mkdirSync(src);
-    fs.mkdirSync(dist);
     //将根目录中除node_modules以外的文件都复制一份（待定）
     const sourceFolder = path.join(__dirname, '../../templates/create');
     const destinationFolder = root;

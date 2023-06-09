@@ -1,2 +1,3 @@
-docs下存放的是对组件描述的markdown文件
-types存放接口以及声明
+docs下存放的是对组件整体描述的markdown文件
+
+src下存放的是组件的具体实现以及一些工具类

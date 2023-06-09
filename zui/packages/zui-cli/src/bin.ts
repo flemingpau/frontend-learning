@@ -31,9 +31,9 @@ program
 program
   .command('dev')// 命令
   .description('Run development environment')// 命令描述
-  .action(async (options) => {// 异步获取dev接口并调用
+  .action(async () => {// 异步获取dev接口并调用
     const { dev } = await import('./commands/dev.js')
-    return dev(options)
+    return dev()
   })
 
   //生产环境
@@ -54,6 +54,7 @@ program
     const { buildComponent } = await import('./commands/buildComponent.js')
     return buildComponent(options)
   })
+
 
 //on添加监听器，当出现未知command时，调用logger输出
 program.on('command:*', async ([cmd]) => {

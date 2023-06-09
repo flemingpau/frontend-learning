@@ -62,7 +62,7 @@ const Intro: FunctionComponent = () => (
   <>
     <h1>介绍</h1>
     <p>
-      这是第一次尝试搭建的组件库，是直接采用create-react-app搭建的，使用了selint以及prettier，暂时就这样
+      这是使用zui-cli项目下用createStore命令调用模板create生成的组件库，如下展示了我写的一个按钮例子。
     </p>
   </>
 );
