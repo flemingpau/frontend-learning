@@ -2,10 +2,9 @@ import inquirer from 'inquirer'
 import path from 'path';
 import fs from "fs-extra"
 import {cp} from "./copyFolder.js"
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+
+import { TEMPLATE_GENERATE } from '../shared/constant.js';
+
 interface Options{
     path?:string
 }
@@ -24,7 +23,7 @@ export async function generate(name: string,options:Options) {
     else root= path.resolve(options.path,name);
     if(!fs.existsSync(root)){
         fs.mkdirSync(root);
-        const sourceFolder = path.join(__dirname, '../../templates/generate');
+        const sourceFolder = TEMPLATE_GENERATE;
         const destinationFolder = root;
         cp(sourceFolder, destinationFolder,[]);
         renameFilesWithMyComponent(root,name);

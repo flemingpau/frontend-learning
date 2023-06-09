@@ -1,17 +1,14 @@
 import inquirer from 'inquirer'
 import path from 'path';
-import fs, { copy } from "fs-extra"
+import fs from "fs-extra"
 import {cp} from "./copyFolder.js"
-import { CWD } from '../shared/constant.js';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+import { CWD, TEMPLATE_CREATE, TEMPLATE_PACKAGE_JSON } from '../shared/constant.js';
+
 
 export async function createStore(name: string) {
-    const __filename = fileURLToPath(import.meta.url);
-    const __dirname = dirname(__filename);
-    const pck = path.resolve(__dirname, '../../templates/create/package.json')
-    const data=fs.readFileSync(pck,"utf-8")
-    const myJSON=JSON.parse(data)
+    const pck = TEMPLATE_PACKAGE_JSON;
+    const data = fs.readFileSync(pck,"utf-8")
+    const myJSON = JSON.parse(data)
     if(!name){//输入名字
         const answers = await inquirer.prompt({
             type: 'input',
@@ -32,8 +29,7 @@ export async function createStore(name: string) {
     //根目录 源文件
     const root = path.join(CWD, name);
     const src = path.join(root, 'src');
-    // const template = fs.readFileSync(path.join(__dirname, 'templates', 'package.json'), 'utf-8');
-    // console.log(fs.stat(root))
+
     if(fs.existsSync(root)){//目标根目录存在，则判断是否覆盖
         const {force}=await inquirer.prompt({
             type:"confirm",
@@ -47,12 +43,12 @@ export async function createStore(name: string) {
     fs.mkdirSync(root);
     fs.mkdirSync(src);
     //将根目录中除node_modules以外的文件都复制一份（待定）
-    const sourceFolder = path.join(__dirname, '../../templates/create');
+    const sourceFolder = TEMPLATE_CREATE;
     const destinationFolder = root;
     
     cp(sourceFolder, destinationFolder,["node_modules","component_template"]);
     
-     fs.writeFileSync(path.join(root, 'package.json'), JSON.stringify(myJSON,null,"\t"));
+    fs.writeFileSync(path.join(root, 'package.json'), JSON.stringify(myJSON,null,"\t"));
     console.log(`Creating ${name} - ${ans.description}`);
     console.log("Hint: to start your work:")//项目提示
     console.log(`cd ${root}`)

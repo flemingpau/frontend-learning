@@ -1,12 +1,10 @@
-import chokidar from 'chokidar';
 import fse from 'fs-extra';
 import logger from '../shared/logger.js';
 import webpack from 'webpack';
 import WebpackDevServer, { FSWatcher } from 'webpack-dev-server';
-import { CWD, SRC_DIR, ZUI_CONFIG } from '../shared/constant.js';
+import { SRC_DIR } from '../shared/constant.js';
 import { getDevConfig } from '../config/webpack.config.js';
-import { merge } from 'lodash-es';
-import path from 'path';
+
 
 const { ensureDirSync, pathExistsSync } = fse;
 

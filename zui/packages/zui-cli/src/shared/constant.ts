@@ -13,6 +13,9 @@ export const TYPES_DIR = resolve(CWD, 'types')
 export const ROOT_DOCS_DIR = resolve(CWD, 'docs')
 export const ROOT_PAGES_DIR = resolve(CWD, 'pages')
 
+export const TEMPLATE_PACKAGE_JSON = resolve(dirname, '../../templates/create/package.json')
+export const TEMPLATE_CREATE = resolve(dirname, '../../templates/create')
+export const TEMPLATE_GENERATE = resolve(dirname, '../../templates/generate')
 
 export const SCRIPTS_EXTENSIONS = ['.tsx', '.ts', '.jsx', '.js', '.mjs', '.cjs']
 export const PUBLIC_DIR_INDEXES = ['index.vue', 'index.tsx', 'index.ts', 'index.jsx', 'index.js']
