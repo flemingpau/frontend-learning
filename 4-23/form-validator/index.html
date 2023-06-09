@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			body {
+				background-color: aliceblue;
+			}
+
+			.container {
+				background-color: white;
+				height: 50%;
+				weight: 50%;
+				padding: 0;
+				margin: 20% 30%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			ul {
+				padding: 0;
+				list-style: none;
+			}
+
+			li {
+				padding-bottom: 10px;
+			}
+
+			button {
+				background-color: royalblue;
+				border-radius: 4px;
+				display: block;
+				width: 100%;
+				padding: 10px;
+				font-size: 14px;
+				cursor: pointer;
+			}
+
+			input {
+				border: 2px solid #f0f0f0;
+				border-radius: 4px;
+				display: block;
+				width: 100%;
+				padding: 15px;
+				margin: 0;
+				font-size: 14px;
+			}
+			.error{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<form id="form" class="form">
+				<h2>Register with Us</h2>
+					<div class="control">
+						<label for="username">Username</label>
+						<input type="text" id="username" placeholder="Enter username" />
+						<div class="error">Error</div>
+					</div>
+					<div class="control">
+						<label for="email">Email</label>
+						<input type="email" id="email" placeholder="Enter email" />
+						<div class="error">Error</div>
+					</div>
+					<div class="control">
+						<label for="password">Password</label>
+						<input type="password" id="password" placeholder="Enter password" />
+						<div class="error">Error</div>
+					</div>
+					<div class="control">
+						<label for="password2">Confirm Password</label>
+						<input type="password" id="password2" placeholder="Enter password again" />
+						<div class="error">Error</div>
+					</div>
+					<button type="submit">Submit</button>
+				</ul>
+			</form>
+		</div>
+		<script>
+			cons form=document.getElementById('form')
+			const username = document.getElementById("username")
+			const email = document.getElementById("email")
+			const password = document.getElementById("password")
+			const password2 = document.getElementById("password2")
+			function showErrorMessage(input,message) {
+				const control=input.parentElement;
+				control.className='control error';
+				const error=control.querySelector('error');
+				error.innerText=message;
+			}
+			// Show success outline
+			function showSuccess(input) {
+			  const formControl = input.parentElement;
+			  formControl.className = 'control success';
+			}
+			
+			// Check email is valid
+			function checkEmail(input) {
+			  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			  if (re.test(input.value.trim())) {
+			    showSuccess(input);
+			  } else {
+			    showError(input, 'Email is not valid');
+			  }
+			}
+			// Event listeners
+			form.addEventListener('submit', function(e) {
+			  e.preventDefault();
+			
+			  if(
+			    checkEmail(email););
+			  }
+			
+			});
+		</script>>
+	</body>
+</html>

@@ -1,0 +1,7 @@
+config/**
+
+**/package.json
+*.md
+doczrc.js
+pnpm-lock.yaml
+pnpm-workspace.yaml

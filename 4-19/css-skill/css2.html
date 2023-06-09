@@ -1,0 +1,50 @@
+<!--https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/Selectors/Selectors_Tasks -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 让 id 为 special 的元素有一个黄色背景。
+让使用类 alert 的元素有一个 1px 的灰色边框。
+如果一个元素使用了 alert 类还有 stop类，让它的背景变为红色。
+如果一个元素使用 alert 类还有 go类，让它的背景变为绿色。-->
+		<style>
+			h1 {
+				color: blue;
+			}
+
+			h2 {
+				background-color: blue;
+				color: white;
+			}
+			span{
+				font-size: 200%;
+			}
+			#special{
+				background-color: yellow;
+			}
+			.alert{
+				border:solid grey 1px;
+			}
+			.alert.stop{
+				background-color: red;
+			}
+			.alert.go{
+				background-color: green;
+			}
+		</style>>
+		<div class="container">
+		    <h1>This is a heading</h1>
+		    <p>Veggies es <span class="alert">bonus vobis</span>, proinde vos postulo <span class="alert stop">essum magis</span> kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
+		    <h2 id="special">A level 2 heading</h2>
+		    <p>Gumbo beet greens corn soko endive gumbo gourd.</p>
+		    <h2>Another level 2 heading</h2>
+		    <p><span class="alert go">Parsley shallot</span> courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+		
+		  </div>
+		    
+
+	</body>
+</html>

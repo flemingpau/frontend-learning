@@ -1,0 +1,1 @@
+let { log, sin, cos } = Math;

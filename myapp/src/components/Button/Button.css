@@ -1,0 +1,32 @@
+.btn{
+    color: royalblue;
+    border-color: royalblue;
+    background-color: white;
+    cursor: pointer;;
+}
+.btn-primary{
+    color: white;
+    background-color: royalblue ;
+    background-color: royalblue;
+}
+.btn-link{
+    border-color: white;
+}
+.btn-danger{
+    color: white;
+    background-color: red;
+    border-color: red;
+}
+.btn-large{
+    font-size:  20px;
+    line-height: 20px;
+}
+.btn-small{
+    font-size:  10px;
+    line-height: 10px;
+}
+:disabled{
+    cursor: not-allowed;
+    opacity: 30%;
+    box-shadow: none;
+}
